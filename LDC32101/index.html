@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LDC 32101 — Organisation & Managerial Communication Quiz</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap wide">
+  <nav>
+    <div class="nav-logo">LDC32101<span>/managerial-communication</span></div>
+    <div class="nav-links">
+      <a class="nav-btn active" href="index.html">Modules</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <div class="hero-tag">ORGANISATION &amp; MANAGERIAL COMMUNICATION · LUANAR</div>
+    <h1>Master <em>LDC 32101</em><br>One Module at a Time</h1>
+    <p class="hero-sub">173 questions drawn straight from the lecture slides, split across 11 modules so you can drill one topic at a sitting. Each module explains every answer and keeps its own leaderboard.</p>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-n">173</div><div class="stat-l">Questions</div></div>
+      <div class="stat"><div class="stat-n">11</div><div class="stat-l">Modules</div></div>
+      <div class="stat"><div class="stat-n" id="stat-attempts">0</div><div class="stat-l">Your attempts</div></div>
+      <div class="stat"><div class="stat-n" id="stat-best">—</div><div class="stat-l">Best score</div></div>
+    </div>
+  </div>
+
+  <h2 class="section-head">Choose a module</h2>
+  <div class="module-grid">
+      <a class="module-card" href="technical-writing.html">
+        <div class="module-num">MODULE 01</div>
+        <div class="module-title">Technical Writing</div>
+        <div class="module-desc">The nine properties, plus purpose, audience and the writing process.</div>
+        <div class="module-foot">12 questions →</div>
+      </a>
+      <a class="module-card" href="proposal-writing.html">
+        <div class="module-num">MODULE 02</div>
+        <div class="module-title">Proposal Writing</div>
+        <div class="module-desc">Structure, introduction, literature review, methodology, ethics and work plan.</div>
+        <div class="module-foot">17 questions →</div>
+      </a>
+      <a class="module-card" href="business-writing.html">
+        <div class="module-num">MODULE 03</div>
+        <div class="module-title">Business Writing</div>
+        <div class="module-desc">Letters, principles of language, application letters, memos and CVs.</div>
+        <div class="module-foot">17 questions →</div>
+      </a>
+      <a class="module-card" href="meetings.html">
+        <div class="module-num">MODULE 04</div>
+        <div class="module-title">Meetings, Agenda & Minutes</div>
+        <div class="module-desc">Meeting types, procedures, roles, agenda and minutes.</div>
+        <div class="module-foot">18 questions →</div>
+      </a>
+      <a class="module-card" href="press-release.html">
+        <div class="module-num">MODULE 05</div>
+        <div class="module-title">Press Release</div>
+        <div class="module-desc">Purpose, writing rules and the standard format.</div>
+        <div class="module-foot">10 questions →</div>
+      </a>
+      <a class="module-card" href="organisational-communication.html">
+        <div class="module-num">MODULE 06</div>
+        <div class="module-title">Organisational Communication</div>
+        <div class="module-desc">Media and channels, network patterns, grapevine and barriers.</div>
+        <div class="module-foot">19 questions →</div>
+      </a>
+      <a class="module-card" href="interpersonal-communication.html">
+        <div class="module-num">MODULE 07</div>
+        <div class="module-title">Interpersonal Communication</div>
+        <div class="module-desc">Relationships, expectations, SET, reciprocity, trust and customers.</div>
+        <div class="module-foot">15 questions →</div>
+      </a>
+      <a class="module-card" href="listening.html">
+        <div class="module-num">MODULE 08</div>
+        <div class="module-title">Effective Listening</div>
+        <div class="module-desc">Listening types, workplace practice, signs and barriers.</div>
+        <div class="module-foot">14 questions →</div>
+      </a>
+      <a class="module-card" href="lobbying-negotiation.html">
+        <div class="module-num">MODULE 09</div>
+        <div class="module-title">Lobbying & Negotiation</div>
+        <div class="module-desc">Lobbying, the seven Cs, mediation, tactics and conflict styles.</div>
+        <div class="module-foot">20 questions →</div>
+      </a>
+      <a class="module-card" href="problem-solving.html">
+        <div class="module-num">MODULE 10</div>
+        <div class="module-title">Problem Solving</div>
+        <div class="module-desc">The seven steps, decision matrices and implementation.</div>
+        <div class="module-foot">12 questions →</div>
+      </a>
+      <a class="module-card" href="interviews.html">
+        <div class="module-num">MODULE 11</div>
+        <div class="module-title">Interviewing Techniques</div>
+        <div class="module-desc">Interview types, interviewer and interviewee roles, questions.</div>
+        <div class="module-foot">19 questions →</div>
+      </a>
+  </div>
+
+  <div class="lb-card">
+    <div class="lb-header"><h3>Your progress</h3><span class="text-muted" style="font-size:12px" id="prog-count"></span></div>
+    <div id="prog-rows"></div>
+  </div>
+
+  <p class="text-muted" style="font-size:12px;text-align:center">
+    Scores are stored in your own browser, so each student keeps a private leaderboard on their device.
+  </p>
+</div>
+
+<script>
+const MODULES = [{"slug": "technical-writing", "title": "Technical Writing", "count": 12}, {"slug": "proposal-writing", "title": "Proposal Writing", "count": 17}, {"slug": "business-writing", "title": "Business Writing", "count": 17}, {"slug": "meetings", "title": "Meetings, Agenda & Minutes", "count": 18}, {"slug": "press-release", "title": "Press Release", "count": 10}, {"slug": "organisational-communication", "title": "Organisational Communication", "count": 19}, {"slug": "interpersonal-communication", "title": "Interpersonal Communication", "count": 15}, {"slug": "listening", "title": "Effective Listening", "count": 14}, {"slug": "lobbying-negotiation", "title": "Lobbying & Negotiation", "count": 20}, {"slug": "problem-solving", "title": "Problem Solving", "count": 12}, {"slug": "interviews", "title": "Interviewing Techniques", "count": 19}];
+const rows = document.getElementById('prog-rows');
+let attempts = 0, best = 0, done = 0;
+
+rows.innerHTML = MODULES.map(m => {
+  let lb = [];
+  try { lb = JSON.parse(localStorage.getItem('ldc32101_lb_' + m.slug)) || []; } catch (e) {}
+  attempts += lb.length;
+  const top = lb.length ? Math.max(...lb.map(e => e.pct)) : null;
+  if (top !== null) { done++; if (top > best) best = top; }
+  const colour = top === null ? 'var(--muted)' : (top >= 75 ? 'var(--green)' : top >= 60 ? 'var(--amber)' : 'var(--red)');
+  return `<div class="lb-row">
+    <div class="lb-info">
+      <div class="lb-name"><a href="${m.slug}.html" style="color:inherit;text-decoration:none">${m.title}</a></div>
+      <div class="lb-meta">${m.count} questions · ${lb.length} attempt${lb.length !== 1 ? 's' : ''}</div>
+    </div>
+    <div class="lb-score-wrap">
+      <div class="lb-score" style="color:${colour}">${top === null ? '—' : top + '%'}</div>
+      <div class="lb-pct">best</div>
+    </div>
+  </div>`;
+}).join('');
+
+document.getElementById('stat-attempts').textContent = attempts;
+document.getElementById('stat-best').textContent = best ? best + '%' : '—';
+document.getElementById('prog-count').textContent = done + ' of ' + MODULES.length + ' modules attempted';
+</script>
+</body>
+</html>
